@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>用户注册模块</title>
+</head>
+
+<body align="center" border="1px">
+  <!-- 用户注册的内容需要和数据库存储的数据一一对应 -->
+  <h1>用户注册页面</h1>
+  <hr>
+  <label>请输入用户名&#x3000：</label>
+  <input type="text" placeholder="用户名" id="rser"> <br>
+  <label>请输入密码&#x3000&#x3000：</label>
+  <input type="password" placeholder="用户密码" id="tped"> <br>
+  <label>请输入邮箱&#x3000&#x3000：</label>
+  <input type="text" placeholder="用户邮箱" id="emaile"><br>
+  <label>请输入真实姓名：</label>
+  <input type="text" placeholder="用户真实姓名" id="nema"><br>
+  <label>请输入性别&#x3000&#x3000：</label>
+  <input type="text" placeholder="用户性别" id="sex"> <br>
+  <label>出生年月日&#x3000&#x3000：</label>
+  <input type="text" placeholder="用户出生年月日" id="Birthday"> <br>
+  <label>手机号码&#x3000&#x3000&#x3000：</label>
+  <input type="text" placeholder="用户手机号码" id="uphoer"> <br>
+  <br>
+  <button id="btn">注册</button>
+  <hr>
+  <h4>修改个人资料</h4>
+  <div id="mydiv">
+    <h6 style="color: rgb(0, 153, 255);">已注册用户才能进入修改界面</h6>
+    <a href="./edit.html">修改个人资料</a>
+  </div>
+  <script>
+    //获取元素
+    let rser = document.getElementById('rser');
+    let tped = document.getElementById('tped');
+    let emaile = document.getElementById('emaile');
+    let nema = document.getElementById('nema');
+    let sex = document.getElementById('sex');
+    let Birthday = document.getElementById('Birthday');
+    let uphoer = document.getElementById('uphoer');
+    let btn = document.getElementById('btn');
+    //创建ajax函数
+    function ajax(a, b, c, d, e, f, g) {
+      let xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            let result = JSON.parse(xhr.responseText);
+            console.log(result);
+            //直接弹出后台返回msg给用户
+            alert(result.msg);
+          } else {
+            console.log('返回数据错误')
+          }
+        }
+      }
+      xhr.open('POST', '/v1/user/reg', true);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      xhr.send(`rser=${a}&tped=${b}&emaile=${c}&nema=${d}&sex=${e}&Birthday=${f}&uphoer=${g}`);
+    }
+    //获取用户输入信息，调用ajax
+    btn.onclick = function () {
+      let rserval = rser.value.trim();
+      let tpedval = tped.value.trim();
+      let emaileval = emaile.value.trim();
+      let nemaval = nema.value.trim();
+      let sexval = sex.value.trim();
+      let Birthdayval = Birthday.value.trim();
+      let uphoerval = uphoer.value.trim();
+      //用三目运算符转换用户输入的性别
+      let str = '';
+      let add = '';
+      str = sex.value;
+      add = str === "男" ? "1" : "0";
+      //正则表达式判断密码
+      if (!/^[a-zA-Z]\w{5,17}$/.test(tpedval)) {
+        alert('密码要以字母开头，长度在6~18之间，只能包含字母、数字和下划线' );
+      }
+      if (!/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(emaileval)) {
+        alert('邮箱格式错误' );
+        return;
+      }
+      if (!/^\d{4}-\d{1,2}-\d{1,2}/.test(Birthdayval)) {
+        alert('日期格式错误' );
+        return;
+      }
+      if (!/^1[3-9]\d{9}$/.test(uphoerval)) {
+        alert('手机号码格式错误' );
+        return;
+      }
+      ajax(rserval, tpedval, emaileval, nemaval, add, Birthdayval, uphoerval);
+    }
+  </script>
+</body>
+
+</html>

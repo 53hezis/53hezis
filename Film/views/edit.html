@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>修改用户资料</title>
+</head>
+
+<body align="center">
+  <h2>修改个人资料</h2>
+  <br>
+  <label>原密码：</label>
+  <input type="password" placeholder="原密码" id="utped">
+  <br>
+  <h4>以下为修改信息，不需修改的按照原内容填写</h4>
+  <label>*新用户名：</label>
+  <input type="text" placeholder="请输入新的用户名" id="rser"> <br>
+  <label>*新手机号：</label>
+  <input type="password" placeholder="请输入新密码" id="tped"> <br>
+  <label>*新邮箱号：</label>
+  <input type="text" placeholder="邮箱" id="emaile"> <br>
+  <button id="btn">提交修改</button>
+  <script>
+    //获取元素
+    let utped = document.getElementById('utped');
+    let rser = document.getElementById('rser');
+    let tped = document.getElementById('tped');
+    let emaile = document.getElementById('emaile');
+    let btn = document.getElementById('btn');
+    function ajax(a,b,c,d){
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4){
+        if(xhr.status>=200&&xhr.status<300){
+          var result = JSON.parse(xhr.responseText);
+          alert(result.msg);
+        }else {
+          console.log('返回数据错误');
+        }
+      }
+    }
+    xhr.open('PUT','/v1/user/uedit',true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.send(`utped=${a}&rser=${b}&tped=${c}&emaile=${d}`);
+    }
+    //点击按钮传递参数并调用
+    btn.onclick = function () {
+      let utpedval = utped.value.trim();
+      let rserval = rser.value.trim();
+      let tpedval = tped.value.trim();
+      let emaileval = emaile.value.trim();
+
+      ajax(tpedval, rserval, utpedval, emaileval);
+      // if (!/^[a-zA-Z]\w{5,17}$/.test(tpedval)) {
+      //   alert('密码要以字母开头，长度在6~18之间，只能包含字母、数字和下划线');
+      // }
+      // if (!/^1[3-9]\d{9}$/.test(uphoerval)) {
+      //   alert('手机号码格式错误');
+      //   return;
+      // }
+      // if (!/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(emaileval)) {
+      //   alert('邮箱格式错误');
+      //   return;
+      // }
+    }
+  </script>
+</body>
+
+</html>

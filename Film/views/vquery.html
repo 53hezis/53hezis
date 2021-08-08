@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>主页</title>
+</head>
+
+<body align="center">
+  <h1>演员列表</h1>
+<br>
+<input type="text" placeholder="请输入搜索内容" id="title"><button id="btn">搜索</button>
+  <table align="center" border="1px">
+    <thead>
+      <tr>
+        <th style="width: 50px;">序号</th>
+        <th style="width: 75px;">电影</th>
+        <th style="width: 75px;">英文标题</th> 
+        <th style="width: 75px;">时长</th>       
+        <th style="width: 75px;">影片类型</th>
+        <th style="width: 75px;">上映时间</th>
+        <th style="width: 75px;">上映地点</th>
+        <th style="width: 750px;">简介</th>        
+        <th style="width: 75px;">外键</th>
+        <th style="width: 75px;">导演姓名</th>
+        <th style="width: 50px;">导演头像</th> 
+        <th style="width: 50px;">是否上映</th>               
+        <th style="width: 50px;">想看的数量</th>
+        <th style="width: 70px;">删除</th>
+      </tr>
+    </thead>
+    <tbody id="userslist"></tbody>
+  </table>
+  <script>
+    //获取元素
+    let pname = document.getElementById('title');
+    let btn = document.getElementById('btn');
+    let userslist = document.getElementById('userslist');   
+    //写ajax函数
+    function ajax(a) {
+      let xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            let result = JSON.parse(xhr.responseText);
+            console.log(result);
+            //调用显示函数showlist
+            showlist(result.data);
+          } else {
+            console.log('数据返回错误')
+          }
+        }
+      }
+      xhr.open('POST', '/v1/video/search', true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.send(`title=${a}`);     
+    }
+   ajax();
+    //创建用于遍历显示的showlist函数
+    function showlist(arr) {
+      //创建一个空字符串接收遍历得来的数据
+      let str = '';
+      //遍历获取数据库数据
+      for (let i = 0; i < arr.length; i++) {
+        //用三目运算符判断用户是男是女
+        add=arr[i].isPlay;
+        a=add===1?"正在上映":"即将上映";
+        str += `
+          <tr>
+            <td>${arr[i].mid}</td>
+            <td>${arr[i].title}</td> 
+            <td>${arr[i].title_en}</td>
+            <td>${arr[i].long}</td>
+            <td>${arr[i].type}</td>
+            <td>${arr[i].ctime}</td>
+            <td>${arr[i].place}</td>
+            <td>${arr[i].detail}</td>
+            <td>${arr[i].Birthday}</td>
+            <td>${arr[i].director}</td>
+            <td>${arr[i].dpic}</td>
+            <td>${a}</td>
+            <td>${arr[i].num}</td>
+            <td><button onclick=del(${arr[i].mid})>删除</button></td>
+          </tr>`
+      }
+      
+      //插入到userslist标签中进行显示
+    userslist.innerHTML = str;
+   }
+    btn.onclick = function(){
+      let titleval = title.value.trim();
+      ajax(titleval);
+    }
+  </script>
+
+</body>
+
+</html>

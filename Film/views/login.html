@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>登录模块</title>
+</head>
+<body align="center" border="1px">
+
+  <h2>用户登录界面</h2>
+  <br>
+  <label>用户名:</label>
+  <input type="text" placeholder="请输入用户名" id="rser"><br>
+  <label>密码&#x3000:</label>
+  <input type="passwoed" placeholder="请输入密码" id="tped"><br>
+  <button id="btn">登录</button>
+  <div id="jump"></div>
+  <script>
+    let arser = document.getElementById('rser');
+    let atped = document.getElementById('tped');
+    let btn = document.getElementById('btn');
+    let jump = document.getElementById('jump');
+    function ajax(a,b){
+      let xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function(){
+        if(xhr.readyState===4){
+          if(xhr.status>=200 && xhr.status<300){
+            let result = JSON.parse(xhr.responseText);
+            console.log(result);
+            alert(result.msg);
+          }else{
+            console.log('数据返回错误')
+          }
+        }
+      }
+      xhr.open('POST','/v1/user/login',true);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      xhr.send(`rser=${a}&tped=${b}&`);
+    }
+    btn.onclick = function(){
+      let rserval = rser.value.trim();
+      let tpedval = tped.value.trim();
+      if(rserval!='' && tpedval!=''){
+        ajax(rserval,tpedval);
+      }else{
+        alert('用户名或者密码不能为空');
+      }
+    }
+  </script>
+</body>
+</html>
