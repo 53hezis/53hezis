@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <title>手机端</title>
+  <style>
+    body,
+    a,
+    ul,
+    p,
+    img {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-decoration: none;
+    }
+
+    .bg {
+      width: 100vw;
+      height: 100%;
+      background-image: url(./img/background/11.jpg);
+      background-size: cover;
+      position: fixed;
+      z-index: -1;
+    }
+    a{
+      -webkit-tap-highlight-color:rgba(255,255,255,0);
+    }
+    a:hover{
+      color: red;
+      text-decoration: none;
+    }
+    .zdy-top {
+    width: 100vw;
+    height: 9vh;
+    display: inline-flex;
+    position: relative;
+    margin-left: -15px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    }
+
+    .carousel-inner img {
+      width: 100%;
+      height: 190px;
+      margin-top: 6%;
+      padding-right: 14px;
+      padding-left: 15px;
+    }
+
+    .zdy-top .ad,.ar{
+      width: 40px;
+      height: 40px;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+    .zdy-top .ar:hover {
+      background-color: cadetblue;
+    }
+
+    .zdy-top .ad:hover {
+      background-color: cadetblue;
+    }
+
+    .zdy-bottom {
+      height: 10vh;
+      background-color: rgba(39, 38, 38, 0.618);
+      z-index: 100;
+    }
+
+    /* 因为顶部和底部的内容被居顶和居地挡住了，所以要空出来这两块 */
+    /* 如背景图固定了，内容就不要放在背景图的内部了，拿出来单放 */
+    .zdy-main {
+      /* padding-top: -10vh; */
+      padding-bottom: 15vh;
+    }
+
+    .zl {
+      width: 10vw;
+      height: 15vh;
+    }
+    /* 底部状态栏 */
+    .zdy-bottom {
+      height: 80px;
+      background-color: dimgrey;
+    }
+
+    .zdy-bottom .text-center img {
+      padding: 3px 3px 3px 3px;
+      margin-top: 6px;
+    }
+
+    .zdy-bottom .text-center:hover {
+      background-color: green;
+    }
+    /* 轮播图按钮 */
+    /* 左右控制按钮背景颜色 */
+    .xz-lr:hover {
+      background-color: rgba(139, 139, 139, 0.521);
+    }
+
+    /*控制符调整*/
+    .xz-kzf li {
+      width: 10px;
+      background-color: #fff;
+    }
+
+    /* 控制符变换的背景 */
+    .xz-kzf .active {
+      background-color: #0aa1ed;
+    }
+
+    .add {
+      width: 100%;
+      height: 70px;
+    }
+    /* 任务栏 */
+    .swiper-wrapper {
+      height: 70px;
+      overflow: hidden;
+      display: flex;
+      margin-top: 20px;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .swiper-wrapper img {
+      float: left;
+      width: 104px;
+      height: 60px;
+      margin: 3px 3px 3px 3px;
+    }
+
+    /* 热门 */
+    .boxhd {
+      width: 100%;
+    }
+    .aff {
+      margin-top: 20px;
+      height: 30px;
+      background-color: rgba(167, 118, 27, 0.822);
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    p {
+      color: rgb(255, 253, 248);
+    }
+
+    .title1 .icon1 {
+      width: 25px;
+      height: 25px;
+    }
+
+    .icon-more1 {
+      color: #fff;
+      display: block;
+      margin-left: 207px;
+    }
+
+    .icon-more1 {
+      padding-right: 0px;
+    }
+
+    .icon-more1>img {
+      width: 25px;
+      height: 25px;
+    }
+    /* 小说模块 */
+    .drr img {
+      width: 90px;
+      height: 120px;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.808);
+      -moz-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.788);
+      -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.788);
+    }
+
+    .drr p {
+      font-size: 15px;
+      position: absolute;
+      margin-left: 107px;
+      margin-top: -120px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+      /*设置行数*/
+    }
+
+    .drr>ul>li {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .drr a {
+      font-size: 18px;
+      color: rgb(5, 5, 5);
+    }
+
+    .drr i {
+      color: blue;
+      margin-left: 5px;
+    }
+    /* 返回顶部 */
+    .ffg img{
+      background-color: rgba(80, 80, 82, 0.863);
+      border-radius: 50%;
+    }
+
+    .ffg img:hover {
+      background-color: rgba(0, 0, 0, 0.775);
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 背景，单拿出来为了固定在最底部 -->
+  <div class="bg"></div>
+  <!-- 顶部 -->
+  <div class="container-fluid">
+    <div class="fixed-top bg-heisi zdy-top text-center">
+      <a href="#"><img src="./img/pig/wenb.png" alt="" class="ad"></a>
+      <a href="./mobile/search.html"><img src="./img/search-icon2.png" alt="" class="ar"></a>
+    </div>
+    <!-- 底部 -->
+    <div class="fixed-bottom zdy-bottom">
+      <div class="float-left w-25 text-center">
+        <a href="./mobile/book.html"><img src="./img/pig/455112.png" alt="" class="w-50">
+        <p class="p-0 text-white">书架</p></a>
+      </div>
+      <div class="float-left w-25 text-center">
+        <img src="./img/hot-icon.png" alt="" class="w-50">
+        <p class="p-0 text-white">热门</p>
+      </div>
+      <div class="float-left w-25 text-center">
+        <a href="./mobile/book copy.html"><img src="./img/paihang.png" alt="" class="jc w-50">
+        <p class="p-0 text-white">分类</p></a>
+      </div>
+      <div class="float-left w-25 text-center">
+        <a href="./mobile/suser.html"><img src="./img/user-icon.png" alt="" class="w-50">
+        <p class="p-0 text-white">个人中心</p></a>
+      </div>
+    </div>
+  </div>
+  <!-- 内容单独拿出来是为了，可以滑动可以，有内边距吧上下的部分空出来 -->
+  <div class="container-fluid">
+    <div class="zdy-main">
+      <div class="xz-lb">
+        <div class="container">
+          <!-- 最外层父级 -->
+          <div class="carousel slide" id="banner" data-ride="carousel">
+            <!-- 展示图区域 -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <!-- d-block w-100去掉图片幽灵空白并且充满整个父级 -->
+                <img src="./img/aimgpp/2.jpg" alt="" class="ddh ">
+              </div>
+              <div class="carousel-item">
+                <img src="./img/aimgpp/3.jpg" alt="" class="ddh">
+              </div>
+              <div class="carousel-item">
+                <img src="./img/aimgpp/4.jpg" alt="" class="ddh">
+              </div>
+              <div class="carousel-item">
+                <img src="./img/aimgpp/5.jpg" alt="" class="ddh">
+              </div>
+            </div>
+            <ul class="carousel-indicators xz-kzf">
+              <li data-target="#banner" data-slide-to="0" class="active"></li>
+              <li data-target="#banner" data-slide-to="1"></li>
+              <li data-target="#banner" data-slide-to="2"></li>
+              <li data-target="#banner" data-slide-to="3"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- nav任务栏 -->
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a href="./detail.html" class="menu-block">
+            <img src="./img/aimgpp/author.png" />
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="./detail.html" class="menu-block">
+            <img src="./img/aimgpp/bookorder.png" />
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="./detail.html" class="menu-block">
+            <img src="./img/aimgpp/task.png" />
+          </a>
+        </div>
+      </div>
+      <!-- 热门 -->
+      <div class="boxhd">
+        <div class="aff">
+          <div class="title1">
+            <img class="icon1" src="./img/hot-icon.png" alt="">热门
+          </div>
+          <a href="#" class="icon-more1">更多
+            <img class="more-icon1" src="./img/right-icon.png" alt="">
+          </a>
+        </div>
+      <!-- 热门 -->
+      <div class="drr">
+          <ul>
+            <li>
+              <a href="./mobile/register.html"><img src="./img/cover/0.jpg" alt=""></a>
+              <p><a href="./mobile.html">诡秘之主</a><i>-东方玄幻</i><br>
+                &#x3000<a href="#">爱潜水的乌贼 </a>著:<br>
+                蒸汽与机械的浪潮中，谁能触及非凡？历史和黑暗的迷雾里，又是谁在耳语？我从诡秘中醒来，
+                睁眼看见这个世界：枪械，大炮，巨舰，飞空艇，差分机；魔药，占卜，诅咒，倒吊人，
+                封印物……光明依旧照耀，神秘从未远离，这是一段“愚者”的传说。</p>
+            </li>
+            <li>
+              <img src="./img/cover/2.jpg" alt="">
+              <p><a href="#">圣墟</a><i>-东方玄幻</i><br>
+                &#x3000<a href="#">辰东 </a>著:<br>
+                在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭，那一缕幽雾又一次临近大地，世间的枷锁被打开了，一个全新的世界就此揭开神秘的一角……</p>
+            </li>
+            <li>
+              <img src="./img/cover/5.jpg" alt="">
+              <p><a href="#">牧神记</a><i>-东方玄幻</i><br>
+                &#x3000&#x3000<a href="#">宅猪 </a>著:
+                大墟的祖训说，天黑，别出门。大墟残老村的老弱病残们从江边捡到了一个婴儿，取名秦牧，含辛茹苦将他养大。这一天夜幕降临，黑暗笼罩大墟，秦牧走出了家门……做个春风中荡漾的反派吧！瞎子对他说。秦牧的反派之路，正在崛起！
+              </p>
+            </li>
+          </ul>
+      </div>
+      <!-- 推荐 -->
+      <div class="aff">
+          <div class="title1">
+            <img class="icon1" src="./img/reco-icon.png" alt="">
+            推荐
+          </div>
+          <a href="#" class="icon-more1">
+            更多
+            <img class="more-icon1" src="./img/right-icon.png" alt="">
+          </a>
+      </div>
+      </div>
+      <div class="drr">
+        <ul>
+          <li>
+            <img src="./img/Cover/a/0.jpg" alt="">
+            <p><a href="#">大梦主</a><i>-东方玄幻</i><br>
+              &#x3000&#x3000<a href="#">忘语 </a>著:<br>
+              　　一个从小体弱多病的富商之子，在寻求续命之法时，意外走上了修仙登天之路！
+              大唐盛世，天下安泰，风调雨顺，百姓安居。
+              千年后世，魔物吞天，妖鬼横行，遍野哀鸣。
+              西游再现，大圣斗天，天蓬下凡，卷帘重生。</p>
+          </li>
+          <li>
+            <img src="./img/Cover/f/0.jpg" alt="">
+            <p><a href="#">夜的命名术</a><i>-东方玄幻</i><br>
+              &#x3000&#x3000<a href="#">会说话的肘子 </a>著:<br>
+              蓝与紫的霓虹中，浓密的钢铁苍穹下，数据洪流的前端，是科技革命之后的世界，也是现实与虚幻的分界。
+              　　钢铁与身体，过去与未来。
+              　　这里，表世界与里世界并存，面前的一切，像是时间之墙近在眼前。
+              　　黑暗逐渐笼罩。
+              　　可你要明白啊我的朋友，我们不能用温柔去应对黑暗，要用火。</p>
+          </li>
+          <li>
+            <img src="./img/Cover/4.jpg" alt="">
+            <p><a href="#">斗破苍穹</a><i>-东方玄幻</i><br>
+              &#x3000&#x3000<a href="#">唐家三少 </a>著:<br>
+              这里是属于斗气的世界，没有花俏艳丽的魔法，有的，仅仅是繁衍到巅峰的斗气！新书等级制度：斗者，斗师，大斗师，斗灵，斗王，斗皇，斗宗，斗尊，斗圣，斗帝</p>
+          </li>
+        </ul>
+      </div>
+      <!-- 分类 -->
+      <div class="aff">
+        <div class="title1">
+          <img class="icon1" src="./img/category-icon.png" alt="">
+          分类
+        </div>
+        <a href="#" class="icon-more1">
+          更多
+          <img class="more-icon1" src="./img/right-icon.png" alt="">
+        </a>
+      </div>
+      <div class="drr">
+        <ul>
+          <li>
+            <img src="./img/Cover/a/1.jpg" alt="">
+            <p><a href="#">大奉打更人</a><i>-东方玄幻</i><br>
+              &#x3000&#x3000<a href="#">卖报小郎君 </a>著:<br>
+              　《大奉打更人》1-12册实体书已在天猫、京东、当当全平台发售。
+              这个世界，有儒；有道；有佛；有妖；有术士。
+              警校毕业的许七安幽幽醒来，发现自己身处牢狱之中，三日后流放边陲.....
+              他起初的目的只是自保，顺便在这个没有人权的社会里当个富家翁悠闲度日。</p>
+          </li>
+          <li>
+            <img src="./img/Cover/a/3.jpg" alt="">
+            <p><a href="#">仙狐</a><i>-东方玄幻</i><br>
+              &#x3000&#x3000<a href="#">流浪的蛤蟆</a>著:<br>
+              　　胡山落帽千年事，人情时事半悲欢！
+              我是胡欢，一头七八百岁的老狐狸，看过法兰西人砍皇后，参加过欧洲革命，大航海时代做过海盗，蒸汽机时代开过工厂，资助过十八世纪最有成就的艺术家，现在……</p>
+          </li>
+          <li>
+            <img src="./img/Cover/e/5.jpg" alt="">
+            <p><a href="#">嘉平关纪事</a><i>-东方玄幻</i><br>
+              &#x3000&#x3000<a href="#">浩烨乐 </a>著:<br>
+              　一场尘封十年的旧事，让嘉平关城笼罩在阴霾之下，家国之情、兄弟之谊、恋人之爱该如何取舍，面对家国安危，众人的命运又该何去何从......</p>
+          </li>
+        </ul>
+      </div>
+      <!-- 排行 -->
+      <div class="aff">
+        <div class="title1">
+          <img class="icon1" src="./img/list-icon.png" alt="">
+          排行
+        </div>
+        <a href="#" class="icon-more1">
+          更多
+          <img class="more-icon1" src="./img/right-icon.png" alt="">
+        </a>
+      </div>
+      <div class="drr">
+        <ul>
+          <li>
+            <a href="./mobile/register.html"><img src="./img/cover/0.jpg" alt=""></a>
+            <p><a href="#">诡秘之主</a><i>-东方玄幻</i><br>
+              &#x3000&#x3000<a href="#">爱潜水的乌贼 </a>著:<br>
+              蒸汽与机械的浪潮中，谁能触及非凡？历史和黑暗的迷雾里，又是谁在耳语？我从诡秘中醒来，
+              睁眼看见这个世界：枪械，大炮，巨舰，飞空艇，差分机；魔药，占卜，诅咒，倒吊人，
+              封印物……光明依旧照耀，神秘从未远离，这是一段“愚者”的传说。</p>
+          </li>
+          <li>
+            <img src="./img/Cover/d/0.jpg" alt="">
+            <p><a href="#">镇妖博物馆</a><i>-东方玄幻</i><br>
+              &#x3000&#x3000<a href="#">阎ZK </a>著:<br>
+              　　 世之反常为妖
+              物之性灵为精
+              魂之不散为诡
+              物之异常为怪
+              司隶校尉，旧称卧虎，汉武帝所设，治巫蛊之事，捕奸滑之徒。
+              全球范围内的灵气和神秘复苏，人类摸索着走上修行道路，潜藏在传说中的妖精鬼怪一一浮现，阴影处仍旧有无数邪魔晃动，一间无人问津的博物馆，一面汉武帝时期的刻虎腰牌，让卫渊成为当代最后一位司隶校尉，带他前往古往今来诸多妖异之事。
+              古今稀奇事，子不语怪力乱神，姑妄言之，姑妄听之。</p>
+          </li>
+          <li>
+            <img src="./img/Cover/e/6.jpg" alt="">
+            <p><a href="#">春雨夏花</a><i>-东方玄幻</i><br>
+              &#x3000&#x3000<a href="#">慈莲笙</a>著:<br>
+              【“以梦为马，不负韶华”主题征文 家庭剧方向】
+              春雨滋润夏花，父母哺育子女。
+              拼搏后的失落，成功后的喜悦，是青春少年的春色与夏花。
+              小事后的冷战，大事时的沉着，是婚姻爱情的春雨和夏雷。
+              一群孩子，几个家庭，那个雨季和花季，当春雨遇上夏花，一切都悄然绽放。</p>
+          </li>
+        </ul>
+      </div>
+      <!-- 返回顶部 -->
+      <div class="ffg">
+          <!--返回顶部锚点 -->
+          <a id="a1" href="javascript:;"><img src="./img/back-top.png" alt=""></a>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  var a1=document.getElementById("a1");
+  a1.onclick=function(e){
+    e.preventDefault();
+    window.scrollTo(0,0);
+  }
+</script>
+</html>

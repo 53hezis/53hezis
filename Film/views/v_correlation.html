@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>电影相关演员</title>
+</head>
+
+<body align="center">
+  <h1>电影相关演员</h1>
+  <br>
+  <input type="text" placeholder="请输入搜索内容" id="movie_id"><button id="btn">搜索</button>
+  <table align="center" border="1px">
+    <thead>
+      <tr>
+        <th style="width: 70px;">序号</th>
+        <th style="width: 120px;">姓名</th>
+        <th style="width: 1500px;">简介</th>
+        <th style="width: 150px;">演员头像</th>
+        <th style="width: 150px;">所属影片的id</th>
+      </tr>
+    </thead>
+    <tbody id="userslist"></tbody>
+  </table>
+  <script>
+    //获取元素
+    let movie_id = document.getElementById('movie_id');
+    let btn = document.getElementById('btn');
+    let userslist = document.getElementById('userslist');
+    //写ajax函数
+    function ajax(a) {
+      let xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            let result = JSON.parse(xhr.responseText);
+            //console.log(result);
+            //调用显示函数showlist
+            showlist(result.data);
+          } else {
+            console.log('数据返回错误')
+          }
+        }
+      }
+      xhr.open('POST', '/v1/video/related', true);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      xhr.send(`movie_id=${a}`);
+    }
+    //ajax();
+    //创建用于遍历显示的showlist函数
+    function showlist(arr) {
+      //创建一个空字符串接收遍历得来的数据
+      let str = '';
+      //遍历获取数据库数据
+      for (let i=0;i<arr.length;i++){
+        str += `
+        <tr>
+            <td>${arr[i].aid}</td>
+            <td>${arr[i].pname}</td> 
+            <td>${arr[i].Introduction}</td>
+            <td>${arr[i].apic}</td>
+            <td>${arr[i].movie_id}</td>
+        </tr>`
+      }
+
+      //插入到userslist标签中进行显示
+      userslist.innerHTML = str;
+    }
+    btn.onclick = function () {
+      let movie_idval = movie_id.value.trim();
+      ajax(movie_idval)
+    }
+  </script>
+
+</body>
+
+</html>

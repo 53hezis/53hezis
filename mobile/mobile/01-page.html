@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <title>注册</title>
+  <style>
+    body,ul{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .bg {
+      width: 100vw;
+      height: 100vh;
+      max-width: 150vw;
+      background-color: rgb(184, 143, 8);
+      background-size: cover;
+      position: fixed;
+      z-index: -1;
+    }
+    a{
+      -webkit-tap-highlight-color:rgba(255,255,255,0);
+    }
+    .cj-top{
+      text-align: center;
+      padding-top: 30%;
+    
+      /* background-color: rgb(10, 137, 235); */
+    }
+    .cj-top .tit{
+      display: flex;
+      text-align: end;
+      border-bottom: 1px solid #333;
+      margin-top: -17vh;
+    }
+    .cj-top .tit1{
+      font-size: 30px;
+      margin-top: 17vh;
+    }
+    .cj-top .txt-cj {
+      background: none;
+      border: none;
+      width: 70vw;
+      height: 2rem;
+      font-size: 0.9rem;
+      color: #333;
+      margin: auto;
+      margin-top: 2vh;
+      border-bottom: 1px solid #333;
+    }
+    .message-code {
+      color: #59a4df;
+      font-size: 1rem;
+      position: relative;
+      top: -2rem;
+      left: 6rem;
+    }
+    .cj-top .btn-cj{
+      background-color: rgb(70, 207, 248);
+      width: 70vw;
+      height: 2rem;
+      font-size: 1rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border:0px;
+    }
+    .cj-xy{
+      font-size: 0.4rem;
+      margin-top: 3vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg">
+    <div class="cj-top">
+      <div class="tit">
+        <a href="../index.html"><img src="../img/back-icon.png" alt=""></a>      
+      </div>
+      <ul>
+        <li>
+          <p class="tit1"><img src="../img/author-icon.png" alt=""></p>   
+        </li>
+        <li>
+          <input type="text" class="txt-cj" placeholder="请输入手机号："disabled>
+        </li>
+        <li>
+          <input type="text" class="txt-cj" placeholder="请输入验证码："disabled>
+        </li>
+        <li>
+          <input type="text" class="txt-cj" placeholder="请输入秘密："disabled>
+        </li>
+        <li>
+          <button class="btn-cj"disabled >注册</button>
+        </li>
+        <li>
+          <a href="../mobile/login.html" disabled>已有账号，直接登录 ></a>
+        </li>
+        <li>
+          <input type="checkbox">我同意本站的使用条款<br>
+        </li>
+        <li>
+          <span class="cj-xy">
+            登录/注册即表示您已同意<a href="/page/servicedeal">《用户服务和隐私政策协议》</a>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+<script src="../js/jquery-1.11.3.js"></script>
+<script>
+  //DOM 4步
+  //1. 查找触发事件的元素
+  $(":checkbox")
+  //2. 绑定事件处理函数
+    .click(function(){
+    //3. 查找要修改的元素
+    var $others=$(":input:not(:checkbox)")
+    //4. 修改元素
+    // $others.disabled=!this.checed;
+    $others.prop("disabled",!this.checked);
+})
+</script>
+</html>

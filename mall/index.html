@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <title>手机端模板</title>
+  <style>
+        body,
+    ul,
+    a,
+    p,input,h4,img{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      text-decoration: none;
+      outline:none
+    }
+        a{
+      -webkit-tap-highlight-color:rgba(255,255,255,0);
+    }
+    .bg {
+      width: 100vw;
+      height: 100vh;
+      background-image: url(./img/background/6.jpg);
+      background-size: cover;
+      position: fixed;
+      z-index: -1;
+    }
+    .text-center{
+      background-color: #c2bdaf;
+    }
+    .zdy-top {
+      height: 10vh;
+    }
+    .zdy-top input {
+    width: 18rem;
+    height: 1.8rem;
+    background-image: url(./img/button/5.png);
+    background-repeat: no-repeat;/*背景-重复:不重复*/
+    background-position: right;/*居右*/
+    background-size: auto 100%;/*背景尺寸:自动100%*/
+    margin-top: 1rem;
+    border-radius: 3vh;
+    z-index: 100;
+    }  
+    /* 底部 */
+    .zdy-bottom {
+      height: 10vh;
+      background-color: #c2bdaf;
+      z-index: 100;
+    }
+    .zdy-main {
+      padding-top: 12vh;
+      padding-bottom: 10vh;
+    }
+    .zl{
+      width: 10vw;
+      height: 15vh;
+    }
+    .text-center img{
+      width: 45px;
+      height: 45px;
+      margin-bottom: -0.2rem;
+    }
+    /* 轮播图 */
+    .cj-carousel{
+      width: 100vw;
+      height: 30vh;
+      background-color: aliceblue;
+    }
+    /* 商品 */
+    .cj-mall .cj-goods{
+      padding-bottom: 4rem;
+    }
+    .cj-mall .cj-goods ul li{
+      width: 45vw;
+      font-size: 0.8rem;
+      border: 0.1rem solid red;
+      float: left;
+      margin-left: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .cj-goods img{
+      width: 42vw;
+      height: 20vh;
+      margin-left: -1rem;
+    }
+    .cj-goods h4{
+    font-size:1rem;
+}
+  </style>
+</head>
+
+<body>
+  <div class="bg"></div>
+  <div class=" text-center">
+    <!-- 头部 -->
+    <div class="zdy-top">
+      <input type="text" placeholder="请输入搜索内容:">
+    </div>
+  </div>
+    <!-- 底部 -->
+    <div class="fixed-bottom zdy-bottom">
+      <div class="float-left w-25 text-center">
+        <img src="./img/button/21.webp" alt="">
+        <p class="p-0 text-white">首页</p>
+      </div>
+      <div class="float-left w-25 text-center">
+        <img src="./img//button/4.png" alt="">
+        <p class="p-0 text-white">分类</p>
+      </div>
+      <div class="float-left w-25 text-center">
+        <img src="./img/button/3.png" alt="">
+        <p class="p-0 text-white">购物车</p>
+      </div>
+      <div class="float-left w-25 text-center">
+        <img src="./img/button/author-icon.png" alt="">
+        <p class="p-0 text-white">活动</p>
+      </div>
+    </div>
+  <!-- 轮播图 -->
+  <div class="cj-carousel">
+
+  </div>
+  <!-- 内容 -->
+  <div class="cj-mall">
+    <div class="cj-goods">
+      <ul>
+        <li>
+            <p class="card-header">跳楼促销商品 <span class="badge badge-danger">自营</span>
+            <!-- 图片 -->
+            <img src="./img/goods/tianzhilan.jpg" alt="">
+            <h4 class="card-title text-danger">￥708.00</h4>
+            <p class="card-text">洋河蓝色经典 天之蓝 46度 礼盒装 480ml*2瓶白酒 口感绵柔浓香型</p>
+        </li>
+        <li>
+          <p class="card-header">跳楼促销商品 <span class="badge badge-danger">自营</span>
+            <!-- 图片 -->
+            <img src="./img/goods/tianzhilan.jpg" alt="">
+            <h4 class="card-title text-danger">￥708.00</h4>
+            <p class="card-text">洋河蓝色经典 天之蓝 46度 礼盒装 480ml*2瓶白酒 口感绵柔浓香型</p>
+        </li>
+        <li>
+          <p class="card-header">跳楼促销商品 <span class="badge badge-danger">自营</span>
+            <!-- 图片 -->
+            <img src="./img/goods/tianzhilan.jpg" alt="">
+            <h4 class="card-title text-danger">￥708.00</h4>
+            <p class="card-text">洋河蓝色经典 天之蓝 46度 礼盒装 480ml*2瓶白酒 口感绵柔浓香型</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>

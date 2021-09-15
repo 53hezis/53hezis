@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <title>手机端</title>
+  <style>
+    body,
+    ul,
+    a,
+    p,input{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      text-decoration: none;
+      outline:none
+    }
+
+    .bg {
+      width: 100vw;
+      height: 100vh;
+      background-image: url(../img/background/11.jpg);
+      background-size: cover;
+      position: fixed;
+      z-index: -1;
+    }
+    a{
+      -webkit-tap-highlight-color:rgba(255,255,255,0);
+    }
+    .zdy-top {
+      width: 100vw;
+      height: 3.5rem;
+      background-color: rgb(177, 129, 71);
+      display: inline-flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .zdy-top input {
+      width: 13rem;
+      height: 1.5rem;
+      margin-top: 1rem;
+      border-radius: 3vh;
+      font-size: 1rem;
+      z-index: 100;
+    }
+
+    .zdy-top .ad,
+    .ar {
+      width: 40px;
+      height: 40px;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+
+    .zdy-top .ar:hover {
+      background-color: cadetblue;
+    }
+
+    .zdy-top .ad:hover {
+      background-color: cadetblue;
+    }
+    .cj-search {
+      width: 100vw;
+      height: 2rem;
+      background-color: rgb(133, 117, 98);
+    }
+
+    .cj-search>ul {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+      font-size: 1.2rem;
+      margin-right: 0.5rem;
+      margin-left: 0.6rem;
+    }
+
+    .cj-search .right {
+      width: 1.3rem;
+      height: 1.3rem;
+      margin-right: 0.5rem;
+    }
+    .zl {
+      width: 10vw;
+      height: 15vh;
+    }
+
+    .drr img {
+      width: 6rem;
+      height: 8rem;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.808);
+      -moz-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.788);
+      -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.788);
+    }
+
+    .drr p {
+      font-size: 0.8rem;
+      margin-left: 7rem;
+      margin-top: -8rem;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+    }
+
+    .drr ul li {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .drr a {
+      font-size: 15px;
+      color: rgb(5, 5, 5);
+    }
+
+    .drr i {
+      color: blue;
+      margin-left: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg"></div>
+  <div class="zdy-top">
+    <a href="../index.html"><img src="../img//back-icon.png" alt="" class="ad"></a>
+    <input type="text" placeholder="请输入搜索内容:" class="w-80 h-45 border-0">
+    <a href="./mobile/01-page.html"><img src="../img/search-icon2.png" alt="" class="ar"></a>
+  </div>
+  <div class="cj-search">
+    <ul>
+      <li>
+        <p>综合</p>
+      </li>
+      <li>
+        <a href="">热门</a>
+      </li>
+      <li>
+        <a href="">点击</a>
+      </li>
+      <li>
+        <a href="">收藏</a>
+      </li>
+      <li>
+        <a href="">更新</a>
+      </li>
+      <li>
+        <p>更多</p>
+      </li>
+      <li>
+        <a href=""><img src="../img/sort-icon.png" alt="" class="right"></a>
+      </li>
+    </ul>
+  </div>
+  <div class="container-fluid">
+    <div class="zdy-main text-white">
+      <div class="drr">
+        <ul>
+          <li>
+            <a href="../mobile/register.html"><img src="../img/cover/0.jpg" alt=""></a>
+            <p><a href="#">诡秘之主</a><br>
+              &#x3000<a href="#"><i>爱潜水的乌贼</i></a> 著:<br>
+              <i>完本·&#x3000东方玄幻-</i><i>异世大陆</i><br>
+              <span>130.86万字 | 968万阅读</span><br>
+              蒸汽与机械的浪潮中，谁能触及非凡？历史和黑暗的迷雾里，又是谁在耳语？我从诡秘中醒来，
+              睁眼看见这个世界：枪械，大炮，巨舰，飞空艇，差分机；魔药，占卜，诅咒，倒吊人，
+              封印物……光明依旧照耀，神秘从未远离，这是一段“愚者”的传说。</p>
+          </li>
+          <li>
+            <a href="../mobile/register.html"><img src="../img/cover/2.jpg" alt=""></a>
+            <p><a href="#">圣墟</a><br>
+              &#x3000<a href="#"><i>辰东</i></a> 著:<br>
+              <i>完本·&#x3000东方玄幻-</i><i>异世大陆</i><br>
+              <span>130.86万字 | 968万阅读</span><br>
+              在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭，那一缕幽雾又一次临近大地，世间的枷锁被打开了，一个全新的世界就此揭开神秘的一角……</p>
+          </li>
+          <li>
+            <a href="../mobile/register.html"><img src="../img/cover/5.jpg" alt=""></a>
+            <p><a href="#">牧神记</a><br>
+              &#x3000<a href="#"><i>宅猪</i></a> 著:<br>
+              <i>完本·&#x3000东方玄幻-</i><i>异世大陆</i><br>
+              <span>130.86万字 | 968万阅读</span><br>
+              大墟的祖训说，天黑，别出门。大墟残老村的老弱病残们从江边捡到了一个婴儿，取名秦牧，含辛茹苦将他养大。这一天夜幕降临，黑暗笼罩大墟，秦牧走出了家门……做个春风中荡漾的反派吧！瞎子对他说。秦牧的反派之路，正在崛起！
+            </p>
+          </li>
+          <li>
+            <a href="../mobile/register.html"><img src="../img/Cover/a/0.jpg" alt=""></a>
+            <p><a href="#">大梦主</a><br>
+              &#x3000<a href="#"><i>忘语</i></a> 著:<br>
+              <i>完本·&#x3000东方玄幻-</i><i>异世大陆</i><br>
+              <span>130.86万字 | 968万阅读</span><br>
+              　　一个从小体弱多病的富商之子，在寻求续命之法时，意外走上了修仙登天之路！
+              大唐盛世，天下安泰，风调雨顺，百姓安居。
+              千年后世，魔物吞天，妖鬼横行，遍野哀鸣。
+              西游再现，大圣斗天，天蓬下凡，卷帘重生。</p>
+          </li>
+          <li>
+            <a href="../mobile/register.html"><img src="../img/Cover/f/0.jpg" alt=""></a>
+            <p><a href="#">夜的命名术</a><br>
+              &#x3000<a href="#"><i>会说话的肘子</i></a> 著:<br>
+              <i>完本·&#x3000东方玄幻-</i><i>异世大陆</i><br>
+              <span>130.86万字 | 968万阅读</span><br>
+              蓝与紫的霓虹中，浓密的钢铁苍穹下，数据洪流的前端，是科技革命之后的世界，也是现实与虚幻的分界。
+              　　钢铁与身体，过去与未来。
+              　　这里，表世界与里世界并存，面前的一切，像是时间之墙近在眼前。
+              　　黑暗逐渐笼罩。
+              　　可你要明白啊我的朋友，我们不能用温柔去应对黑暗，要用火。</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

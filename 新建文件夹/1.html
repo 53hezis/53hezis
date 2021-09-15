@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .anli li {
+            float: left;
+            position: relative;
+            width: 320px;
+            height: 320px;
+            background-color: red;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+/*  li li 选择紧接在 <li> 元素之后的所有 <li> 元素。此处指后两个 li 标签*/
+        .anli li li {
+            margin-left: 20px;
+        }
+
+        .mask {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 320px;
+            height: 320px;
+            background-color: black;
+            opacity: 0;
+            transition: 0.8s;
+            z-index: 8;
+        }
+
+        .anli img {
+            width: 320px;
+            transition: 0.8s;
+            z-index: 5;
+            position: relative;
+            /*height: 320px;*/
+        }
+        .anli .text{
+            color: white;
+            z-index: 10;
+            position: absolute;
+            top: 0px;
+            left:0px;
+            padding: 20px;
+        }
+        .text .move{
+            margin-top: 245px;
+            transition: 0.8s;
+        }
+/* li:hover .move 鼠标移上后 move 标签的动画效果*/
+        .anli li:hover .move{
+            margin-top: 80px;
+        }
+        .anli li:hover .move .move{
+            margin-top: 20px;
+        }
+        .anli li:hover img{
+            transform: scale(1.1);
+        }
+        .anli li:hover .mask{
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+<ul class="anli">
+    <li>
+        <div class="mask"></div>
+        <img src="1e.jpg" />
+        <div class="text">
+            <h2 class="move">秦凯&何姿西安婚礼</h2>
+            <p class="move">高雅灰 轻奢粉，婚礼围绕「涟漪」这一主题，整体呈现了“流动的水”这一概念。</p>
+            <p class="move">酒店 西安豪享来温德姆至尊酒店</p>
+            <p class="move">嘉宾 300人以上</p>
+        </div>
+    </li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

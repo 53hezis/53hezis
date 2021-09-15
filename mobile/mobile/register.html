@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <title>简介模板</title>
+  <style>
+    body,ul,p,a,img,h2,ol{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-decoration: none;
+    }
+    .bg {
+      width: 100vw;
+      height: 100vh;
+      background-color:bisque;
+      background-size: cover;
+      position: fixed;
+      z-index: -1;
+    }
+    a{
+      -webkit-tap-highlight-color:rgba(255,255,255,0);
+    }
+    .cj-rit{
+      width: 100vw;
+      overflow: hidden;
+    }
+    .cj-rit .ppk ul li{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+      border-bottom: 1px solid rgb(106, 105, 105);
+    }
+    .cj-rit .ttr{
+      width: 10vw;
+      height: 5vh;
+      margin-left: 2vh;
+      margin-right: 2vh;
+    }
+    .cj-rit .cc:hover{
+      background-color: rgb(196, 152, 7);
+    }
+    .cj-rit .ttp{
+      width: 120px;
+      height: 163px;
+      margin-top: 2vh;
+      margin-left: 2vh;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.808);
+      -moz-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.788);
+      -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.788);
+    }
+
+    .cj-rit p {
+      font-size: 15px;
+      position: absolute;
+      margin-left: 150px;
+      margin-top: -150px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+      /*设置行数*/
+    }
+
+    .cj-rit>ul>li {
+    margin-bottom: 10px;
+}
+
+    .cj-rit a {
+      font-size: 18px;
+      color: rgb(5, 5, 5);
+    }
+
+    .cj-rit i {
+      color: blue;
+    }
+    .cj-rit span {
+      color: #d1d1d4;
+      margin-top: -10px;
+    }
+    .cj-rit ol li{
+      float: left;
+      font-size: 15px;
+      margin-right: 5px;
+      margin-left: -5px;
+    }
+    .cj-rit button{
+    width: 98px;
+    height: 37px;
+    background-color: rgb(22, 197, 220);
+    font-size: 0.8rem;
+    margin-top: 18px;
+    margin-left: 20px;
+    border: 0px;
+    margin-right: -10px;
+    }
+    .cj-rit button:hover{
+      background-color: rgb(196, 152, 7);
+    }
+    .cj-rit h4{
+      padding-bottom: 10px;
+      border-top: 1px solid rgb(106, 105, 105);
+    }
+    .cj-rit h2 {
+      font-size: 16px;
+      color: black;
+      padding-right: 20px;
+      padding-left: 20px;
+      margin-top: -17px;
+    }
+    .cj-rit .cj-ml{
+      border-top: 1px solid rgb(106, 105, 105);
+      border-bottom: 1px solid rgb(106, 105, 105);
+    }
+    .cj-ml:hover{
+      background-color: rgb(19, 214, 195);
+    }
+    .cj-ml h3{
+      font-size: 15px;
+    }
+    .cj-author h3{
+      font-size: 1rem;
+    }
+    .cj-auth{
+    text-align: center;
+    }
+    .cj-auth img{
+    width: 26vw;
+    height: 14vh;
+		border-radius: 50%;/* 图片圆形化 */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 背景，单拿出来为了固定在最底部 -->
+  <div class="bg"></div>
+
+  <!-- 内容单独拿出来是为了，可以滑动可以，有内边距吧上下的部分空出来 -->
+  <div class="container-fluid">
+    <div class="zdy-main text-white">
+      <div class="cj-rit">
+        <div class="ppk">
+          <ul>
+            <li>
+              <a href="../index.html" class="cc"><img src="../img/back-icon.png" alt="" class="ttr"></a>
+              <dd>作品详情</dd>
+              <a href="" class="cc"><img src="../img/pig/sehzhi.png" alt="" class="ttr"></a>
+            </li>
+        </div>
+        <ul>
+          <li>
+            <img src="../img/cover/0.jpg" alt="" class="ttp">
+            <p><a href="#">诡秘之主</a><br>
+              &#x3000<a href="#"><i>爱潜水的乌贼</i></a>  著:<br>
+              <i>东方玄幻-</i><i>异世大陆-&#x3000完本·</i><br>
+              <span>130.86万字 | 968万阅读</span><br>
+          </li>
+        <ol>
+          <li>
+            <dd>8975462</dd>
+            <dd>粉丝</dd>
+          </li>
+          <li>
+            <dd>9.6万</dd>
+            <dd>打赏</dd>
+          </li>
+          <li>
+            <dd>8937</dd>
+            <dd>月票</dd>
+          </li>
+          <li>
+            <dd>3654</dd>
+            <dd>评价票</dd>
+          </li>
+        </ol>
+          <li>
+            <div>
+              <button><a href="../mobile.html">立即阅读</a></button>
+              <button><a href="#">加入书架</button></a>
+              <button><a href="#">订阅</button></a>
+            </div>
+          </li>
+          <li>
+            <h4>简介：</h4>
+            <h2>&#x3000&#x3000蒸汽与机械的浪潮中，谁能触及非凡？历史和黑暗的迷雾里，又是谁在耳语？我从诡秘中醒来，
+            睁眼看见这个世界：枪械，大炮，巨舰，飞空艇，差分机；魔药，占卜，诅咒，倒吊人，
+            封印物……光明依旧照耀，神秘从未远离，这是一段“愚者”的传说。</h2>
+          </li>
+          <li>
+            <div class="cj-ml">
+              <a href="./login.html"><h3>目录：完本·新书已发  一个普通人的日常（八）</h3></a>
+            </div>
+          </li>
+          <li>
+            <div class="cj-author">
+              <a href=""><h3>本书作者:</h3></a>
+            </div>
+          </li>
+          <li>
+            <div class="cj-auth">
+              <a href=""><img src="../img/author/1.png" alt=""></a>
+              <h3>爱潜水的乌贼</h3><br>
+              <h3>暂无作者简介</h3>
+            </div>
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

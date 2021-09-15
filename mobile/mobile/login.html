@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <title>登录</title>
+  <style>
+    body,ul{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .bg {
+      width: 100vw;
+      height: 100vh;
+      max-width: 150vw;
+      background-color: rgb(184, 143, 8);
+      background-size: cover;
+      position: fixed;
+      z-index: -1;
+    }
+    a{
+      -webkit-tap-highlight-color:rgba(255,255,255,0);
+    }
+    .cj-top{
+      text-align: center;
+      padding-top: 30%;
+    
+      /* background-color: rgb(10, 137, 235); */
+    }
+    .cj-top .tit{
+      display: flex;
+      text-align: end;
+      border-bottom: 1px solid #333;
+      margin-top: -17vh;
+    }
+    .cj-top .tit1{
+      font-size: 30px;
+      margin-top: 17vh;
+    }
+    .cj-top .txt-cj {
+      background: none;
+      border: none;
+      width: 70vw;
+      height: 2rem;
+      font-size: 0.9rem;
+      color: #333;
+      margin: auto;
+      margin-top: 2vh;
+      border-bottom: 1px solid #333;
+    }
+    .cj-top .btn-cj{
+      background-color: rgb(70, 207, 248);
+      width: 70vw;
+      height: 2rem;
+      font-size: 1rem;
+      margin-top: 3vh;
+      border:0px;
+    }
+    .cj-xy{
+      font-size: 0.4rem;
+      margin-top: 3vh;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg">
+    <div class="cj-top">
+      <div class="tit">
+        <a href="../index.html"><img src="../img/back-icon.png" alt=""></a>      
+      </div>
+      <ul>
+        <li>
+          <p class="tit1"><img src="../img/author-icon.png" alt=""></p>   
+        </li>
+        <li>
+          <input type="text" class="txt-cj" placeholder="请输入用户名：">
+        </li>
+        <li>
+          <input type="text" class="txt-cj" placeholder="请输入秘密：">
+        </li>
+        <li>
+          <button class="btn-cj" >登录</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>

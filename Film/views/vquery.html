@@ -3,13 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>主页</title>
+  <title>单个电影搜索</title>
 </head>
 
 <body align="center">
-  <h1>演员列表</h1>
+  <h1>单个电影搜索</h1>
 <br>
-<input type="text" placeholder="请输入搜索内容" id="title"><button id="btn">搜索</button>
+<input type="text" placeholder="请输入搜索内容" id="U_title"><button id="btn">搜索</button>
   <table align="center" border="1px">
     <thead>
       <tr>
@@ -20,12 +20,12 @@
         <th style="width: 75px;">影片类型</th>
         <th style="width: 75px;">上映时间</th>
         <th style="width: 75px;">上映地点</th>
-        <th style="width: 750px;">简介</th>        
-        <th style="width: 75px;">外键</th>
+        <th style="width: 750px;">简介</th> 
         <th style="width: 75px;">导演姓名</th>
         <th style="width: 50px;">导演头像</th> 
-        <th style="width: 50px;">是否上映</th>               
-        <th style="width: 50px;">想看的数量</th>
+        <th style="width: 50px;">是否上映</th> 
+        <th style="width: 50px;">想看的数量</th>       
+        <th style="width: 75px;">电影编号</th>
         <th style="width: 70px;">删除</th>
       </tr>
     </thead>
@@ -33,7 +33,7 @@
   </table>
   <script>
     //获取元素
-    let pname = document.getElementById('title');
+    let U_title = document.getElementById('U_title');
     let btn = document.getElementById('btn');
     let userslist = document.getElementById('userslist');   
     //写ajax函数
@@ -51,7 +51,7 @@
           }
         }
       }
-      xhr.open('POST', '/v1/video/search', true);
+      xhr.open('POST', '/v1/video/uactor', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.send(`title=${a}`);     
     }
@@ -75,11 +75,11 @@
             <td>${arr[i].ctime}</td>
             <td>${arr[i].place}</td>
             <td>${arr[i].detail}</td>
-            <td>${arr[i].Birthday}</td>
             <td>${arr[i].director}</td>
             <td>${arr[i].dpic}</td>
             <td>${a}</td>
             <td>${arr[i].num}</td>
+            <td>${arr[i].title_id}</td>
             <td><button onclick=del(${arr[i].mid})>删除</button></td>
           </tr>`
       }
@@ -88,8 +88,8 @@
     userslist.innerHTML = str;
    }
     btn.onclick = function(){
-      let titleval = title.value.trim();
-      ajax(titleval);
+      let U_titleval = U_title.value.trim();
+      ajax(U_titleval);
     }
   </script>
 

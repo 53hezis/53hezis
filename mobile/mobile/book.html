@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <title>用户中心</title>
+  <style>
+        body,
+    ul,
+    a,
+    p,input{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      text-decoration: none;
+      outline:none
+    }
+    a{
+      -webkit-tap-highlight-color:rgba(255,255,255,0);
+    }
+    .bg {
+      width: 100vw;
+      height: 100%;
+      background-image: url(../img/background/11.jpg);
+      background-size: cover;
+      position: fixed;
+      z-index: -1;
+    }
+    a{
+      -webkit-tap-highlight-color:rgba(255,255,255,0);
+    }
+    .zdy-top {
+      width: 100vw;
+      height: 3.5rem;
+      background-color: rgb(177, 129, 71);
+      display: inline-flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .zdy-top .add{
+      font-size: 1.3rem;
+      padding-top: 0.8rem;
+    }
+    .zdy-top .ad, .ar {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+.zdy-main {
+      /* padding-top: -10vh; */
+      padding-bottom: 15vh;
+    }
+
+    .zl {
+      width: 10vw;
+      height: 15vh;
+    }
+    /* 底部状态栏 */
+    .zdy-bottom {
+      height: 80px;
+      background-color: dimgrey;
+    }
+
+    .zdy-bottom .text-center img {
+      padding: 3px 3px 3px 3px;
+      margin-top: 6px;
+    }
+
+    .zdy-bottom .text-center:hover {
+      background-color: rgb(194, 194, 194);
+    }
+  .suer{
+    width: 100vw;
+    height: 100%;
+  }
+  .cj-sue{
+    width: 100vw;
+    overflow: hidden;
+    margin-bottom:5rem;
+  }
+  .cj-sue ul li img {
+    width: 23vw;
+    height: 17vh;
+    margin: 1rem;
+    border-radius: 5%;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.808);
+}
+.cj-sue ul li{
+  float: left;
+  width: 100%;
+  border-bottom:  2rem solid rgb(112, 68, 2);
+  border-radius: 5%;
+}
+  </style>
+</head>
+
+<body>
+  <div class="bg"></div>
+  <div class="zdy-top">
+    <a href="../index.html"><img src="../img/pig/11111.png" alt="" class="ad"></a>
+    <p class="add">书架</p>
+    <a href="./mobile/01-page.html"><img src="../img/pig/145623.png" alt="" class="ar"></a>
+  </div>
+
+  <div class="suer">
+    <div class="cj-sue">
+      <ul>
+        <li>
+          <a href="../mobile.html"><img src="../img/cover/0.jpg" alt=""></a>
+          <a href=""><img src="../img/cover/玄幻/3.jpg" alt=""></a>
+          <a href=""><img src="../img/cover/f/8.jpg" alt=""></a>
+        </li>
+        <li>
+          <a href=""><img src="../img/cover/2.jpg" alt=""></a>
+          <a href=""><img src="../img/cover/a/4.jpg" alt=""></a>
+          <a href=""><img src="../img/cover/f/0.jpg" alt=""></a>
+        </li>
+        <li>
+          <a href=""><img src="../img/cover/3.jpg" alt=""></a>
+          <a href=""><img src="../img/cover/b/6.jpg" alt=""></a>
+          <a href=""><img src="../img/cover/d/5.jpg" alt=""></a>
+        </li>
+        <li>
+          <a href=""><img src="../img/cover/4.jpg" alt=""></a>
+          <a href=""><img src="../img/cover/c/6.jpg" alt=""></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+        <!-- 底部 -->
+        <div class="fixed-bottom zdy-bottom">
+          <div class="float-left w-25 text-center">
+            <img src="../img/pig/455112.png" alt="" class="w-50">
+            <p class="p-0 text-white">书架</p>
+          </div>
+          <div class="float-left w-25 text-center">
+            <a href="../index.html"><img src="../img/hot-icon.png" alt="" class="w-50">
+            <p class="p-0 text-white">热门</p></a>
+          </div>
+          <div class="float-left w-25 text-center">
+            <a href="../mobile/book copy.html"><img src="../img/paihang.png" alt="" class="jc w-50">
+            <p class="p-0 text-white">分类</p></a>
+          </div>
+          <div class="float-left w-25 text-center">
+            <a href="../mobile/suser.html"><img src="../img/user-icon.png" alt="" class="w-50">
+            <p class="p-0 text-white">个人中心</p></a>
+          </div>
+        </div>
+      </div>
+</body>
+
+</html>

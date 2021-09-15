@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <title>用户中心</title>
+  <style>
+        body,
+    ul,
+    a,
+    p,input{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      text-decoration: none;
+      outline:none
+    }
+
+    .bg {
+      width: 100vw;
+      height: 100vh;
+      background-color: rgb(167, 129, 81);
+      background-size: cover;
+      position: fixed;
+      z-index: -1;
+    }
+    a{
+      -webkit-tap-highlight-color:rgba(255,255,255,0);
+    }
+    .zdy-top {
+      width: 100vw;
+      height: 3.5rem;
+      background-color: rgb(177, 129, 71);
+      display: inline-flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .zdy-top input {
+      width: 13rem;
+      height: 1.5rem;
+      margin-top: 1rem;
+      border-radius: 3vh;
+      font-size: 1rem;
+      z-index: 100;
+    }
+    .zdy-top .add{
+      font-size: 1.3rem;
+      padding-top: 0.8rem;
+    }
+    .zdy-top .ad,
+    .ar {
+      width: 40px;
+      height: 40px;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+    .suer{
+      color: red;
+      width: 100vw;
+      height: 15rem;
+      background-image: url(../img/background/11.jpg);
+    }
+    .suer .cj-sue {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    }
+    .suer .d1 {
+    width: 20vw;
+    height: 5rem;
+    border-radius: 50rem;
+    margin-top: 2rem;
+    }  
+    .suer h4{
+      margin-top: -1rem;
+      color: blanchedalmond;
+    }
+    .cj-zh ul li {
+    float: left;
+    color: #fff;
+    font-size: 15px;
+    margin-right: 17px;
+    margin-left: 11px;
+}
+.list .d4{
+  width: 2rem;
+  height: 2rem;
+  margin-top: 0.8rem;
+}
+.list ul li{
+  width: 100vw;
+  height: 10vh;
+border-bottom: 0.1rem solid rgb(177, 176, 176);
+}
+.list p{
+  font-size: 1.5rem;
+}
+.jw{
+  width: 100vw;
+  height: 10vh;
+  margin: auto;background-color: rgb(167, 129, 81);
+}
+.jw p{
+  text-align: center;
+  font-size: 1.5rem;
+  padding-top: 1rem;
+}
+.jw:hover{
+  background-color: darkgray;
+}
+  </style>
+</head>
+
+<body>
+  <div class="bg"></div>
+  <div class="zdy-top">
+    <a href="../index.html"><img src="../img//back-icon.png" alt="" class="ad"></a>
+    <p class="add">用户中心</p>
+    <a href="./mobile/01-page.html"><img src="../img/search-icon2.png" alt="" class="ar"></a>
+  </div>
+  <div class="suer">
+    <div class="cj-sue">
+      <img src="../img/pig/1.jpg" alt="" class="d1">
+      <!-- <img src="../img/pig/v3.png" alt="" class="d2"> -->
+      <!-- <img src="../img/pig/v2.png" alt="" class="d3"> -->
+      <p> 观众</p><br>
+      <h4>该用户很懒什么也没留下!</h4>
+    </div>
+    <div class="cj-zh">
+    <ul>
+      <li>
+        <dd>100</dd>
+        <dd>艾豆</dd>
+      </li>
+      <li>
+        <dd>1 张</dd>
+        <dd>月票</dd>
+      </li>
+      <li>
+        <dd>137张</dd>
+        <dd>评价票</dd>
+      </li>
+    </ul>
+    </div>
+  </div>
+  <div class="list">
+    <ul>
+      <li>
+        <p><img src="../img/pig/895png.png" alt="" class="d4">消息中心</p>
+      </li>
+      <li>
+        <p><img src="../img/pig/v2.png" alt="" class="d4">我的会员</p>
+      </li>
+      <li>
+        <p><img src="../img/pig/safety-icon.png" alt="" class="d4">安全中心</p]>
+      </li>
+      <li>
+        <p><img src="../img/pig/help-icon.png" alt="" class="d4">帮助中心</p>
+      </li>
+      <li>
+        <p><img src="../img/pig/sehzhi.png" alt="" class="d4">设置</p>
+      </li>
+    </ul>     
+  </div>
+  <div class="jw">
+    <p>退出登录</p>
+  </div>
+    
+</body>
+
+</html>

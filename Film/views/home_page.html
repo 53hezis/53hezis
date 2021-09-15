@@ -3,11 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>主页</title>
+  <title>全部电影列表</title>
 </head>
 
 <body align="center">
-  <h1>演员列表</h1>
+  <h1>全部电影列表</h1>
   <hr>
   <a href="./query.html">查询单个用户入口</a>
   <hr>
@@ -50,7 +50,7 @@
           }
         }
       }
-      xhr.open('GET', '/v1/video/search', true)
+      xhr.open('POST', '/v1/video/search', true);
       xhr.send();
     }
     //调用ajax函数
